@@ -1,0 +1,183 @@
+/* KRS.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    /* padding: 20px; /* Tailwind handles padding on container */
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Container styling is primarily handled by Tailwind's .container class */
+/* You can add overrides here if needed */
+
+/* Header h1 styling is primarily handled by Tailwind classes in HTML */
+/* header h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 600;
+} */
+
+/* --- KPI Section Enhancements --- */
+/* KPI section grid is handled by Tailwind in HTML */
+/* #kpi-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+} */
+
+.kpi-card {
+    /* background-color: #fff; /* Tailwind bg-white */
+    /* padding: 25px; /* Tailwind p-5 */
+    /* border-radius: 10px; /* Tailwind rounded-xl */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Tailwind shadow-lg */
+    text-align: center; /* Tailwind text-center (though flex items-center handles this better) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ensure Tailwind's flex utilities don't get overridden if you uncomment display:block or similar */
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Consider a darker shadow like shadow-xl or shadow-2xl from Tailwind on hover if preferred */
+}
+
+/* KPI card h2 styling is primarily handled by Tailwind classes in HTML */
+/* .kpi-card h2 {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 8px;
+    font-weight: 500;
+} */
+
+/* KPI card .value styling is primarily handled by Tailwind classes in HTML */
+/* .kpi-card .value {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #343a40;
+} */
+
+/* KPI card .trend styling is primarily handled by Tailwind classes in HTML */
+/* .kpi-card .trend {
+    font-size: 0.85em;
+    color: #555;
+} */
+
+/* --- Charts Grid Enhancements --- */
+/* Charts grid is handled by Tailwind in HTML */
+/* .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+} */
+
+.chart-container-wrapper {
+    /* background-color: #fff; /* Tailwind bg-white */
+    /* padding: 25px; /* Tailwind p-5 */
+    /* border-radius: 10px; /* Tailwind rounded-xl */
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Tailwind shadow-lg */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Consider a darker shadow like shadow-xl or shadow-2xl from Tailwind on hover if preferred */
+}
+
+/* Chart container wrapper h2 styling is primarily handled by Tailwind classes in HTML */
+/* .chart-container-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    color: #34495e;
+    font-weight: 600;
+    position: relative; /* Tailwind relative */
+    /* padding-bottom: 10px; /* Tailwind pb-3 (adjust value if needed) */
+/* } */
+
+/* ลูกเล่น: เพิ่มเส้นคั่นสวยๆ ใต้หัวข้อ Chart */
+/* This targets h2 elements inside .chart-container-wrapper that have Tailwind's `relative` class */
+.chart-container-wrapper h2.relative::after {
+    content: '';
+    position: absolute; /* Tailwind absolute */
+    left: 50%; /* Tailwind left-1/2 */
+    bottom: 0; /* Tailwind bottom-0 */
+    transform: translateX(-50%); /* Tailwind -translate-x-1/2 */
+    width: 50px; /* Can be a Tailwind width class e.g., w-12 */
+    height: 3px; /* Can be a Tailwind height class e.g., h-0.5 or h-1 */
+    background-color: #007bff; /* Example color, can be a Tailwind bg color e.g., bg-blue-500 */
+    border-radius: 2px; /* Tailwind rounded-sm or rounded */
+}
+
+.chart-container {
+    width: 100%; /* Tailwind w-full */
+    /* height: 320px; /* Set by inline style in HTML, can be moved here or controlled by Tailwind */
+}
+.chart-title-underline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* Tailwind pb-3 ใน HTML ของ h2 จะสร้างระยะห่างให้เส้นนี้ */
+    transform: translateX(-50%);
+    width: 50px; 
+    height: 3px; 
+    background-color: #3b82f6; /* สีตัวอย่าง (Tailwind: bg-blue-500) */
+    border-radius: 3px;
+}
+/* Responsive adjustments */
+/* Tailwind handles responsiveness through its utility classes (sm:, md:, lg:) */
+/* @media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    #kpi-section {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    .kpi-card {
+        padding: 20px;
+    }
+    .kpi-card .value {
+        font-size: 1.8em;
+    }
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .chart-container-wrapper {
+        padding: 20px;
+    }
+    .chart-container-wrapper h2 {
+        font-size: 1.1em;
+    }
+    .chart-container {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    #kpi-section {
+        grid-template-columns: 1fr;
+    }
+     .kpi-card .value {
+        font-size: 1.9em;
+    }
+    .kpi-card h2 {
+        font-size: 0.9em;
+    }
+} */
+
+/* Style for kpi-icon if not using inline style in HTML */
+/* .kpi-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+} */

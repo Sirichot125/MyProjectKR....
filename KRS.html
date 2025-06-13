@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="KRS2.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <a href="#">KRS Dashboard</a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">แดชบอร์ด</a></li>
+                    <li><a href="#">ผู้ใช้งาน</a></li>
+                    <li><a href="#">รายงาน</a></li>
+                    <li><a href="#">การตั้งค่า</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-actions">
+                <button>ออกจากระบบ</button>
+            </div>
+        </aside>
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>KRS Developer Customers</h1>
+            </header>
+            <div class="overview-section">
+                <div class="overview-card">
+                    <i class="fas fa-poll fa-1x"></i> 
+                    <div class="card-title">Total Revenue</div>
+                    <div class="card-value" id="total-revenue">$0</div>
+                    <div class="card-trend"><span id="total-revenue-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-calendar-alt fa-1x"></i>
+                    <div class="card-title">Net Profit</div>
+                    <div class="card-value" id="net-profit">$0</div>
+                    <div class="card-trend"><span id="net-profit-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-users fa-1x"></i>
+                    <div class="card-title">New Customers</div>
+                    <div class="card-value" id="new-customers">0</div>
+                    <div class="card-trend"><span id="new-customers-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-money-check-alt fa-1x"></i>
+                    <div class="card-title">Cash Flow</div>
+                    <div class="card-value" id="cash-flow">$0</div>
+                    <div class="card-trend"><span id="cash-flow-trend"></span></div>
+                </div>
+
+                <div class="overview-card">
+                    <i class="fas fa-tag fa-1x"></i> 
+                    <div class="card-title">Average Price Per Item</div>
+                    <div class="card-value" id="average-price-per-item">$0.00</div>
+                    </div>
+                <div class="overview-card">
+                    <i class="fas fa-boxes fa-1x"></i> 
+                    <div class="card-title">Total Quantity Sold</div>
+                    <div class="card-value" id="total-quantity-sold">0</div>
+                    </div>
+                <div class="overview-card">
+                    <i class="fas fa-history fa-1x"></i>
+                    <div class="card-title">Uptime</div>
+                    <div class="card-value" id="uptime">100%</div>
+                    <div class="card-trend"><span id="uptime-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-tachometer-alt fa-1x"></i>
+                    <div class="card-title">Response Time</div>
+                    <div class="card-value" id="response-time">0 ms</div>
+                    <div class="card-trend"><span id="response-time-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-bug fa-1x"></i> 
+                    <div class="card-title">Bugs</div>
+                    <div class="card-value" id="bugs">0</div>
+                    <div class="card-trend"><span id="bugs-trend"></span></div>
+                </div>
+                <div class="overview-card">
+                    <i class="fas fa-rocket fa-1x"></i> 
+                    <div class="card-title">Deployment Count</div>
+                    <div class="card-value" id="deployments">0</div>
+                    <div class="card-trend"><span id="deployments-trend"></span></div>
+                </div>
+            </div>
+
+
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="card-title">Revenue</div>
+                    <canvas id="revenue-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Expenses</div>
+                    <canvas id="expenses-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Net Profit Margin</div>
+                    <div id="net-profit-margin"></div> 
+                    <div class="donut-chart-container">
+                        <canvas id="net-profit-margin-chart"></canvas>
+                        <div class="donut-chart-value" id="net-profit-margin-value">0%</div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Revenue vs. Target</div>
+                    <canvas id="revenue-target-chart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="card-title">Revenue by Item Code (Top 5)</div>
+                    <canvas id="revenue-by-item-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Uptime</div>
+                    <canvas id="uptime-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Response Time</div>
+                    <canvas id="response-time-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="card-title">Bug Count</div>
+                    <canvas id="bug-count-chart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="KRS_js.js"></script>
+    </body>
+</html>
