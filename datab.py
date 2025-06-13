@@ -1254,6 +1254,6 @@ def delete_product_by_item_code(item_code_param):
 if __name__ == "__main__":
     load_initial_dashboard_data()
     logger.info("Starting Flask application on http://127.0.0.1:5000 ...")
-    app.run(debug=True, port=5000, host="127.0.0.1")
+    app.run(debug=True, port=10000, host='0.0.0.0')
 else:  # ถ้าไม่ได้รันโดยตรง (เช่น ถูก import) ก็ควรจะโหลดข้อมูลเริ่มต้นเช่นกัน
     load_initial_dashboard_data()
